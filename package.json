@@ -1,6 +1,6 @@
 {
   "name": "@rhysforyou/react-native-carousel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/HorizontalCarousel.js",
   "license": "MIT",
   "author": "Rhys Powell <rhys@rpowell.me>",
