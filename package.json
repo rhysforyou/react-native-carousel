@@ -1,0 +1,31 @@
+{
+  "name": "@rhysforyou/react-native-carousel",
+  "version": "0.1.0",
+  "main": "dist/HorizontalCarousel.js",
+  "license": "MIT",
+  "author": "Rhys Powell <rhys@rpowell.me>",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsc --declaration"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.18",
+    "@types/react-native": "^0.57.26",
+    "react": "16.6.3",
+    "react-native": "0.57.8"
+  },
+  "peerDependencies": {
+    "react": ">=16.6",
+    "react-native": ">=0.57"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "prettier": {
+    "semi": false,
+    "signleQuote": true
+  }
+}

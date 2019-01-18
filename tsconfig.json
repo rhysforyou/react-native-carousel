@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "esnext",
+    "resolveJsonModule": true,
+    "outDir": "dist"
+  },
+  "include": ["src/*"],
+  "exclude": ["node_modules", "dist"]
+}
