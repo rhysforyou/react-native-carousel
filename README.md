@@ -4,7 +4,7 @@ This package provides a simple, performant carousel component for React Native a
 
 ![A demo of the library in action](https://raw.githubusercontent.com/rhysforyou/react-native-horizontal-carousel/master/demo.gif)
 
-[View this demo in Expo](https://snack.expo.io/SklK-ARM4)
+[View this demo in Expo](https://snack.expo.io/S1r-IA0GV)
 
 ## Installation
 
