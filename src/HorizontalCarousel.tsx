@@ -16,21 +16,21 @@ import {
 // Metrics constansts
 const CARD_WIDTH = 200
 
-export interface HorizontalCarouselProps<Item> {
+export interface CarouselProps<Item> {
   data: Array<unknown>
   renderItem: ListRenderItem<Item>
   keyExtractor: (item: Item, index: number) => string
   style: StyleProp<ViewStyle>
 }
 
-interface HorizontalCarouselState {
+interface CarouselState {
   width: number
   scrollAnimation: Animated.Value
 }
 
-export default class HorizontalCarousel<Item> extends Component<
-  HorizontalCarouselProps<Item>,
-  HorizontalCarouselState
+export default class Carousel<Item> extends Component<
+  CarouselProps<Item>,
+  CarouselState
 > {
   static propTypes = {
     data: PropTypes.array.isRequired,
@@ -41,7 +41,7 @@ export default class HorizontalCarousel<Item> extends Component<
 
   private listComponent: FlatList<Item> | null = null
 
-  constructor(props: HorizontalCarouselProps<Item>) {
+  constructor(props: CarouselProps<Item>) {
     super(props)
 
     const { width } = Dimensions.get("window")
