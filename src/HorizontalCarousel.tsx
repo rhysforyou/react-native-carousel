@@ -17,10 +17,37 @@ import {
 const CARD_WIDTH = 200
 
 export interface CarouselProps<Item> {
-  data: Array<unknown>
+  /**
+   * A plain array of data items to be rendered by the carousel.
+   */
+  data: any[]
+
+  /**
+   * Takes an item from `data` and renders it into the carousel, wrapping it in a card view of fixed width.
+   *
+   * For more information see the [`FlatList` docs](https://facebook.github.io/react-native/docs/flatlist#renderitem).
+   */
   renderItem: ListRenderItem<Item>
+
+  /**
+   * Takes an item from `data` and its `index` and returns a unique key.
+   */
   keyExtractor: (item: Item, index: number) => string
-  style: StyleProp<ViewStyle>
+
+  /**
+   * A set of styles to apply to the underlying `FlatList` component.
+   */
+  style?: StyleProp<ViewStyle>
+
+  /**
+   * These styles will be applied to the scroll view content container which wraps all of the child views.
+   */
+  contentContainerStyle?: StyleProp<ViewStyle>
+
+  /**
+   * These styles will be applied to the cards used to contain each carousel item.
+   */
+  cardStyle?: StyleProp<ViewStyle>
 }
 
 interface CarouselState {
@@ -99,6 +126,7 @@ export default class Carousel<Item> extends Component<
       <Animated.View
         style={[
           styles.card,
+          this.props.cardStyle,
           {
             transform: [
               {
@@ -118,11 +146,12 @@ export default class Carousel<Item> extends Component<
   }
 
   render() {
-    const { data, keyExtractor, style } = this.props
+    const { data, keyExtractor, style, contentContainerStyle } = this.props
     return (
       <Animated.FlatList
         ref={(ref: any) => (this.listComponent = ref && ref.getNode())}
         style={style}
+        contentContainerStyle={contentContainerStyle}
         contentInset={this.contentInset()}
         showsHorizontalScrollIndicator={false}
         data={data}
