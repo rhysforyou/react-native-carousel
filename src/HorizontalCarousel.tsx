@@ -160,6 +160,7 @@ export default class Carousel<Item> extends Component<
         horizontal
         snapToAlignment="center"
         snapToInterval={CARD_WIDTH}
+        decelerationRate="fast"
         onScroll={Animated.event(
           [
             {
