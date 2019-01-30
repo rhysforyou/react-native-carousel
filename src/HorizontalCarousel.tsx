@@ -59,7 +59,7 @@ export default class Carousel<Item> extends Component<
   CarouselProps<Item>,
   CarouselState
 > {
-  static propTypes = {
+  public static propTypes = {
     data: PropTypes.array.isRequired,
     renderItem: PropTypes.func.isRequired,
     keyExtractor: PropTypes.func.isRequired,
@@ -68,7 +68,7 @@ export default class Carousel<Item> extends Component<
 
   private listComponent: FlatList<Item> | null = null
 
-  constructor(props: CarouselProps<Item>) {
+  public constructor(props: CarouselProps<Item>) {
     super(props)
 
     const { width } = Dimensions.get("window")
@@ -80,11 +80,11 @@ export default class Carousel<Item> extends Component<
     Dimensions.addEventListener("change", this.updateWidth)
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     Dimensions.removeEventListener("change", this.updateWidth)
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.scrollToItem(0, false)
   }
 
@@ -145,7 +145,7 @@ export default class Carousel<Item> extends Component<
     )
   }
 
-  render() {
+  public render() {
     const { data, keyExtractor, style, contentContainerStyle } = this.props
     return (
       <Animated.FlatList
